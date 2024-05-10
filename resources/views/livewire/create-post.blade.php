@@ -1,3 +1,3 @@
 <div>
-    {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
+    <h2> create post</h2>
 </div>
