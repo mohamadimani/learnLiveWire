@@ -14,11 +14,11 @@
 
 </head>
 
-<body  >
+<body>
 
     <livewire:CreatePost>
 
-    @livewireScripts
+        @livewireScripts
 </body>
 
 </html>
