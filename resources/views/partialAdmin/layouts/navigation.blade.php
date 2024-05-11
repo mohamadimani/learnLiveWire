@@ -25,8 +25,8 @@
             <li>
                 <a href="#">کاربران</a>
                 <ul>
-                    <li><a href="{{ route('admin.users_create')}}">ایجاد کاربر</a></li>
-                    <li><a href="{{ route('admin.users_list')}}">لیست کاربران</a></li>
+                    {{-- <li><a href="{{ route('admin.users_create')}}">ایجاد کاربر</a></li>
+                    <li><a href="{{ route('admin.users_list')}}">لیست کاربران</a></li> --}}
                 </ul>
             </li>
         </ul>

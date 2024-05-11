@@ -8,6 +8,6 @@ class Create extends Component
 {
     public function render()
     {
-        return view('livewire.admin.users.create');
+        return view('livewire.admin.users.create')->layout('admin.layouts.master');
     }
 }
