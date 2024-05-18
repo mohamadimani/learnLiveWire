@@ -25,7 +25,6 @@
             <li>
                 <a href="#">کاربران</a>
                 <ul>
-                    <li><a href="{{ route('admin.users.create')}}">ایجاد کاربر</a></li>
                     <li><a href="{{ route('admin.users')}}">لیست کاربران</a></li>
                 </ul>
             </li>
