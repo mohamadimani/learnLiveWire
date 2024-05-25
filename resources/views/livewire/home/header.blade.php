@@ -30,16 +30,16 @@
                     <ul class="navbar-nav navbar-nav-scroll me-auto">
                         <!-- Nav item 1 Demos -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link active" href="#">صفحه اصلی</a>
+                            <a class="nav-link active" wire:navigate href="{{ route('home') }}">صفحه اصلی</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#">لیست دوره ها</a>
+                            <a class="nav-link" wire:navigate href="{{ route('courses') }}">لیست دوره ها</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#">درباره ما</a>
+                            <a class="nav-link" href="{{ route('home') }}">درباره ما</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#">تماس با ما</a>
+                            <a class="nav-link" href="{{ route('home') }}">تماس با ما</a>
                         </li>
 
                     </ul>
