@@ -44,7 +44,7 @@
                         <span class="col-md-1">{{ $key + $toDoList->firstItem() }}</span>
                         <span class="col-md-1"><input type="checkbox" class="{{ $toDo->status == 2 ? 'd-none' : '' }}"" wire:click="done({{ $toDo->id }})"></span>
                         <span class="col-md-7">{{ $toDo->title }}</span>
-                        <span class="col-md-1"><img src="{{ asset('todoImages/' . $toDo->img) }}" style="height:30px;" alt=""></span>
+                        <span class="col-md-1"><img src="{{ asset('todoImages/' . $toDo->img) }}" style="height:30px;" class="hoverImage"></span>
                         <span class="col-md-1"><a class="btn btn-sm btn-info {{ $toDo->status == 2 ? 'd-none' : '' }}" wire:click="edit({{ $toDo->id }})">Edit</a></span>
                         <span class="col-md-1"><a class="btn btn-sm btn-danger {{ $toDo->status == 2 ? 'd-none' : '' }}" wire:click="delete({{ $toDo->id }})">Delete</a></span>
                     </li>

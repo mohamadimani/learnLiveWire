@@ -35,6 +35,18 @@
                 transform: rotate(360deg);
             }
         }
+
+        img.hoverImage:hover {
+            width: 30px;
+            height: 30px !important;
+            position: relative;
+            z-index: 99999
+        }
+
+        img.hoverImage:hover {
+            width: 150px;
+            height: 150px !important;
+        }
     </style>
     @livewireStyles
 </head>
