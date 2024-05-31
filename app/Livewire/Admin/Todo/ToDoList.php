@@ -15,6 +15,7 @@ class ToDoList extends Component
     public $title;
     public $isEdit = false;
     public $loaded = false;
+    public $img;
 
 
     public function render()
@@ -25,12 +26,19 @@ class ToDoList extends Component
 
     public function addTodo()
     {
+        $image = '';
+        if ($this->img) {
+            $image = time() . rand(10, 99) . '.' .  $this->img->getClientOriginalExtension();
+            $this->img->storeAs('todoImages', $image, 'public');
+        }
+
         ToDo::create([
             'title' => $this->title,
             'status' => true,
-            'img' => '',
+            'img' => $image,
             'user_id' => 1,
         ]);
+
         unset($this->title);
     }
 

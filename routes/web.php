@@ -46,7 +46,6 @@ Route::get('users', UsersList::class)->name('admin.users');
 Route::get('todo', ToDoList::class)->name('admin.todo');
 
 
-
 Route::get('/clear', function () {
     $exitCode = Artisan::call('optimize:clear');
     echo $exitCode . ' Done! ';
