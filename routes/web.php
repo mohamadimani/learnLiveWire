@@ -12,6 +12,7 @@ use App\Livewire\Home\Courses;
 use App\Livewire\Home\Index;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Admin\Todo\ToDoList;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/dashboard', function () {
@@ -42,6 +43,7 @@ Route::get('/courses/detail', CourseDetail::class)->name('courses.detail');
 
 Route::get('/admin', Panel::class)->name('admin');
 Route::get('users', UsersList::class)->name('admin.users');
+Route::get('todo', ToDoList::class)->name('admin.todo');
 
 
 

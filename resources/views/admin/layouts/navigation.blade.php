@@ -25,7 +25,13 @@
             <li>
                 <a href="#">کاربران</a>
                 <ul>
-                    <li><a href="{{ route('admin.users')}}">لیست کاربران</a></li>
+                    <li><a href="{{ route('admin.users') }}">لیست کاربران</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">کارها</a>
+                <ul>
+                    <li><a href="{{ route('admin.todo') }}">لیست کارها</a></li>
                 </ul>
             </li>
         </ul>
