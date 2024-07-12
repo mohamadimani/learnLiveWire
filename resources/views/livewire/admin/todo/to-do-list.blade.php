@@ -23,6 +23,7 @@
         </div>
     </div>
 
+    
     <div class="loader" wire:loading></div>
     <div class="alert alert-danger   col-md-12" wire:offline>
         <span class="">اینترنت شما قطع میباشد</span>
