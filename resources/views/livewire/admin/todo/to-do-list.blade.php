@@ -37,7 +37,7 @@
                     <span class="col-md-7">عنوان</span>
                     <span class="col-md-1">عکس</span>
                     <span class="col-md-1">ویرایش</span>
-                    <span class="col-md-1">حذف</span>
+                    <span class="col-md-1">حذف</span> 
                 </li>
 
                 @foreach ($toDoList as $key => $toDo)
