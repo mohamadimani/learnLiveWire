@@ -16,16 +16,29 @@ class ToDoList extends Component
     public $isEdit = false;
     public $loaded = false;
     public $img;
+    public $editImg;
 
 
     public function render()
     {
-        $toDoList =  ToDo::whereIn('status',   [1, 2])->orderBy('id',   'DESC')->paginate(10);
+        $toDoList =  ToDo::whereIn('status',   [1, 2])->orderBy('id',   'DESC')->paginate(5);
         return view('livewire.admin.todo.to-do-list', compact('toDoList'))->layout('admin.layouts.master');
+    }
+
+    public function checkTitle()
+    {
+        $this->validate([
+            'title' => 'required|string|min:4',
+        ]);
     }
 
     public function addTodo()
     {
+        $this->validate([
+            'title' => 'required|string|min:4',
+            'img' => 'required|image',
+        ]);
+
         $image = '';
         if ($this->img) {
             $image = time() . rand(10, 99) . '.' .  $this->img->getClientOriginalExtension();
@@ -40,6 +53,7 @@ class ToDoList extends Component
         ]);
 
         unset($this->title);
+        unset($this->img);
     }
 
     public function delete($toDoId)
@@ -54,14 +68,27 @@ class ToDoList extends Component
     {
         $todo = ToDo::find($toDoId);
         $this->title = $todo->title;
+        $this->editImg = $todo->img;
         $this->isEdit = $todo->id;
     }
 
     public function update($toDoId)
     {
+        $image = '';
+        if ($this->img) {
+            $image = time() . rand(10, 99) . '.' .  $this->img->getClientOriginalExtension();
+            $this->img->storeAs('todoImages', $image, 'public');
+        }
+
         $todo = ToDo::find($toDoId);
         $todo->title  = $this->title;
+        $todo->img  = !empty($image) ? $image :  $todo->img;
         $todo->save();
+
+        unset($this->title);
+        unset($this->img);
+        unset($this->editImg);
+        $this->isEdit = false;
     }
 
     public function done($toDoId)
